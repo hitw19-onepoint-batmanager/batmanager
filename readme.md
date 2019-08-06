@@ -68,8 +68,13 @@ Notre solution est composé de trois applications, une application mobile pour l
 
 # Déployer le projet
 
-- Mettre en place une base de données CouchDB
+- Mettre en place une CouchDB
+    - Hébergeur gratuit: [smileupps](https://cloud.smileupps.com)
+    - Ajouter les db suivantes: batgarage, batdevices, batcrew, batcave
+    - Remplacer dans SyncService (Batmobile), DataService (Alfred) et Program.cs (Robin), le endpoint de CouchDB
 - Obtenir une clé d'API Google Map pour la carte
+    - Lien G-Map: [Google Doc](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key)
+    - Ajouter cette clé dans les app.module.ts de la Batmobile et Alfred
 
 # TODO
 

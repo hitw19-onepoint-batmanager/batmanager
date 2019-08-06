@@ -256,7 +256,7 @@ namespace Robin
         private async Task<List<BatDocument>> DBHandler(List<BatDocument> docList = null)
         {
             CurrentStatus = Ressources.CurrentStatusImportDocToDb;
-            var client = new MyCouchClient("https://admin:03b4b11ad421@couchdb-da6b93.smileupps.com/", dbname);
+            var client = new MyCouchClient("<your-couchDB-endpoint>", dbname);
 
             if (docList == null) return null;
             foreach (var doc in docList)
@@ -281,7 +281,7 @@ namespace Robin
             CurrentStatus = Ressources.CurrentStatusUploadAudioToDb;
             var hasError = false;
             var hasDeleted = false;
-            var client = new MyCouchClient("https://admin:03b4b11ad421@couchdb-da6b93.smileupps.com/", dbname);
+            var client = new MyCouchClient("<your-couchDB-endpoint>", dbname);
             FilesCountToProcess = docList.Count();
             foreach (var doc in docList)
             {
