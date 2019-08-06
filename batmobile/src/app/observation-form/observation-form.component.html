@@ -1,0 +1,130 @@
+
+
+<form  #f="ngForm" (ngSubmit)="onSubmitObservationForm()">
+  <div class="observation-form-container" >
+    <mat-form-field >
+        <mat-label>Latitude :</mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="observation.coordY"
+          name="coordY"
+          placeholder="Latitude"
+          [disabled]="observation.coordY"
+        />
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Longitude :</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="observation.coordX"
+            name="coordX"
+            placeholder="Longitude"
+            [disabled]="observation.coordX"
+          />
+        </mat-form-field>
+        <mat-form-field>
+      <mat-label> Nombre du micro :</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="observation.micNumber"
+        name="micNumber"
+        required
+        placeholder="Numéro du micro"
+      />
+    </mat-form-field>
+    <mat-checkbox
+      [(ngModel)]="observation.fixedPointProtocol"
+      name="fixedPointProtocol"
+    > Protocole Point fixe
+    </mat-checkbox>
+    <mat-form-field>
+      <mat-label> Numéro du point :</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="observation.pointNumber"
+        name="pointNumber"
+        required
+        placeholder="Numéro du point"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Sites:</mat-label>
+      <input
+        matInput
+        type="string"
+        [(ngModel)]="observation.sites"
+        name="sites"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Habitat dominant</mat-label>
+      <mat-select [value]="observation.dominantHabitat">
+        <mat-option
+          *ngFor="let dominantHabitat of dominantHabitats | enumToArray"
+          [value]="dominantHabitat"
+        >
+          {{ dominantHabitat }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Elément structurant principal (végétation)</mat-label>
+      <mat-select [value]="observation.principalStructuringElement">
+        <mat-option
+          *ngFor="
+            let principalStructuringElement of principalStructuringElements
+              | enumToArray
+          "
+          [value]="principalStructuringElement"
+        >
+          {{ principalStructuringElement }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Elément structurant secondaire (divers)</mat-label>
+      <mat-select [value]="observation.secondaryStructuringElement">
+        <mat-option
+          *ngFor="
+            let secondaryStructuringElement of secondaryStructuringElements
+              | enumToArray
+          "
+          [value]="secondaryStructuringElement"
+        >
+          {{ secondaryStructuringElement }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Gestion</mat-label>
+      <mat-select [value]="observation.management">
+        <mat-option
+          *ngFor="let management of managements | enumToArray"
+          [value]="management"
+        >
+          {{ management }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="observation.lighting" name="lighting">
+      Eclairage
+    </mat-checkbox>
+    <mat-form-field>
+      <mat-label> Hauteur de pose (m):</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="observation.dropHeight"
+        name="dropHeight"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" [disabled]="!f.valid">
+      {{ OperationName }}
+    </button>
+  </div>
+</form>

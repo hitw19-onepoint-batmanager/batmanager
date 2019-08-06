@@ -1,0 +1,46 @@
+<mat-toolbar class='navbar'>
+    <mat-icon (click)=drawer.toggle() >apps</mat-icon>
+    <span class="example-fill-remaining-space"></span>
+    <span><img src='../assets/logo.png'></span>
+</mat-toolbar>
+<mat-drawer-container autosize style="min-height: 100vh; overflow: hidden">
+  <mat-drawer #drawer mode="over" class="sidenav" style="width: 30vw; text-align: center">
+    <mat-nav-list>
+      <a mat-list-item (click)="drawer.toggle()" routerLink='/home' routerLinkActive="router-link-active">
+        <button mat-icon-button>
+            <mat-icon>home</mat-icon>
+         </button>
+        accueil
+      </a>
+      <a mat-list-item (click)="drawer.toggle()" routerLink='/recordinginfos' routerLinkActive="router-link-active">
+        <button mat-icon-button>
+            <mat-icon>info</mat-icon>
+         </button>
+        Recordings
+      </a>
+      <a mat-list-item (click)="drawer.toggle()" routerLink='/map' routerLinkActive="router-link-active">
+        <button mat-icon-button>
+            <mat-icon>map</mat-icon>
+         </button>
+        Carte Globale
+      </a>
+      <a mat-list-item (click)="drawer.toggle()" routerLink='/crewmanagement' routerLinkActive="router-link-active">
+        <button mat-icon-button>
+            <mat-icon>people</mat-icon>
+         </button>
+        Gestion des collaborateurs
+      </a>
+      <a mat-list-item (click)="drawer.toggle()" routerLink='/devicesmanagement' routerLinkActive="router-link-active">
+        <button mat-icon-button>
+            <mat-icon>devices</mat-icon>
+         </button>
+        Gestion des appareils
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+  <div>
+    <main class='maincontent'>
+      <router-outlet (click)="drawer.toggle()"></router-outlet>
+    </main>
+  </div>
+</mat-drawer-container>

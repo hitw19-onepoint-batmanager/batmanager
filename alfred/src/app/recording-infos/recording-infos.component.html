@@ -1,0 +1,55 @@
+<div class='content'>
+<mat-progress-bar *ngIf='this.isLoading' mode="buffer"></mat-progress-bar>
+
+<h1> Liste des enregistrements  </h1>
+
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<table mat-table matSort
+[dataSource]="this.dataSource" multiTemplateDataRows
+       class="mat-elevation-z8">
+
+  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+    <th mat-sort-header mat-header-cell *matHeaderCellDef>{{column}}</th>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+      <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <h3>Téléchargement Fichier</h3>
+        <div style='text-align: center'>
+          <button color='primary' mat-mini-fab (click)='this.download(element)'>
+                <mat-icon>save_alt</mat-icon>
+          </button>
+        </div>
+        <h3>Téléchargement nuit entière</h3>
+        <div style='text-align: center'>
+            <button color='primary' mat-mini-fab [disabled]='this.isLoading' (click)='this.downloadall()'>
+                <mat-icon>save</mat-icon>
+          </button>
+        </div>
+        <h3>Map</h3>
+        <div style='text-align: center'>
+          <app-g-map [locations]='this.batdevices' [width]='"90vw"' [height]='"40vh"' [locations]='[]'></app-g-map>
+        </div>
+        <br>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandItem(element)">
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+</table>
+
+<mat-paginator [pageSizeOptions]="[ 10, 25, 100]" showFirstLastButtons>
+</mat-paginator>
+</div>
+

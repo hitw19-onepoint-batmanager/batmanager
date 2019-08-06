@@ -1,0 +1,48 @@
+<div style='height: 6vh;text-align:center;'>
+  <button (click)='triggerDevices()' style='margin-left: 5px' color='primary' mat-mini-fab>
+      <mat-icon *ngIf='this.showDevices'>center_focus_strong</mat-icon>
+      <mat-icon *ngIf='this.showDevices === false'>center_focus_weak</mat-icon>
+  </button>
+  <button (click)='triggerPOI()' style='margin-left: 5px' color='primary' mat-mini-fab>
+      <mat-icon *ngIf='this.showPOI'>location_on</mat-icon>
+      <mat-icon *ngIf='this.showPOI === false'>location_off</mat-icon>
+  </button>
+</div>
+<agm-map [zoom]='0' [style.height]='this.heightMap' [style.width]='this.widthMap' style="margin: 0" class='navmap' [restriction]='this.restriction' [mapDraggable]='true' [keyboardShortcuts]='false' [showDefaultInfoWindow]='true'>
+  <agm-marker *ngFor='let loc of getMarkerLocations()' [latitude]="loc.lat" [longitude]="loc.lng" [title]='loc.label' [iconUrl]='loc.iconUrl'>
+    <agm-info-window *ngIf='loc.data' [disableAutoPan]="true">
+        <h3>Id Appareil</h3>
+        <p>{{loc.label}}</p>
+        <h3>Start - End Date</h3>
+        <p>{{loc.data.dateEnd}} - {{loc.data.dateEnd}}</p>
+        <h3>Latitude - Longitude</h3>
+        <p>{{loc.lat}} - {{loc.lng}}</p>
+        <h3>Hauteur</h3>
+        <p>{{loc.data.dropHeight}}</p>
+        <h3>Responsable</h3>
+        <p>{{loc.data.user}}</p>
+        <h3>Statut</h3>
+        <p>{{loc.data.status}}</p>
+        <h3>Eclairage</h3>
+        <p>{{loc.data.lighting}}</p>
+        <h3>Gestion Environnement</h3>
+        <p>{{loc.data.management}}</p>
+        <h3>Nombre de micros</h3>
+        <p>{{loc.data.micNumber}}</p>
+        <h3>Protocole de point fixe</h3>
+        <p>{{loc.data.fixedPointProtocol}}</p>
+        <h3>Points du protocole</h3>
+        <p>{{loc.data.pointNumber}}</p>
+        <h3>Site</h3>
+        <p>{{loc.data.sites}}</p>
+        <h3>Habitat dominant</h3>
+        <p>{{loc.data.dominantHabitat}}</p>
+        <h3>Element structurel principal</h3>
+        <p>{{loc.data.principalStructuringElement}}</p>
+        <h3>Element structurel secondaire</h3>
+        <p>{{loc.data.secondaryStructuringElement}}</p>
+        <h3>Commentaire</h3>
+        <p>{{loc.data.Comments}}</p>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

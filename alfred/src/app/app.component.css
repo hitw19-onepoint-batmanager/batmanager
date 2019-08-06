@@ -1,0 +1,11 @@
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.navbar {
+  height: 10vh;
+}
+
+.maincontent {
+  height: 90vh;
+}

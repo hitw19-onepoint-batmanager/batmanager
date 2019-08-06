@@ -1,0 +1,14 @@
+<div class='center-flex'>
+  <app-g-map
+    *ngIf='this.observation && this.observation.coordX && this.observation.coordY'
+    [height]='"50vh"'
+    [width]='"50vw"'
+    [observation]='this.observation'>
+  </app-g-map>
+</div>
+<br>
+<div style='text-align: center'>
+  <button mat-raised-button color='accent' (click)='this.onClickObservationForm()' >
+      {{ OperationName }}
+  </button>
+</div>

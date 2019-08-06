@@ -1,0 +1,30 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Roboto';
+  margin: 0;
+}
+app-root>div{
+  padding: 10px;
+  height: 100vh;
+  background:  #a2b31d url("./assets/mobilebat.gif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-blend-mode: screen;
+}
+.mat-toolbar{
+  background-color: #46542e !important
+}
+.mat-input-element{
+  background-color: white
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

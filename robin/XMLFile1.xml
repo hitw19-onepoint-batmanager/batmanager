@@ -1,0 +1,18 @@
+﻿<toast launch="app-defined-string">
+
+  ...
+
+  <actions>
+
+    <input id="textBox" type="text" placeHolderContent="Type a reply"/>
+
+    <action
+        content="Send"
+        arguments="action=reply&amp;convId=9318"
+        activationType="background"
+        hint-inputId="textBox"
+        imageUri="Assets/Reply.png"/>
+
+  </actions>
+
+</toast>

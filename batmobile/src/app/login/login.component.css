@@ -1,0 +1,9 @@
+
+  .login-container, mat-form-field {
+    display: block;
+  }
+  
+  .login-container > * {
+    margin-right: 10%;
+    margin-left: 10%;
+  } 
