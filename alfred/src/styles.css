@@ -1,0 +1,24 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.router-link-active {
+  border-left: 3px solid green;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.content {
+  margin: 20px;
+}
+
+.bg {
+  height: 100%;
+  margin: 0;
+  background: #ffffff url("./assets/batmanbg.gif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ }

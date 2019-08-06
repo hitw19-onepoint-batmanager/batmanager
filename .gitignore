@@ -1,0 +1,26 @@
+.vs/slnx.sqlite
+.vs/slnx.sqlite
+
+alfred/node_modules/
+
+batmobile/\.vscode/
+
+\.vscode/
+
+
+batmobile/node_modules/
+
+batmobile/dist/
+
+batmobile/\.vscode/
+
+\.vscode/
+
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Robin/v16/Server/sqlite3/db.lock
+/.vs/Robin/v15/Server/sqlite3/db.lock
+
+\.vs/

@@ -1,0 +1,36 @@
+<h1>Bienvenue</h1>
+<br>
+<form #f="ngForm" (ngSubmit)="onLogin()">
+  <div class="login-container">
+    <mat-form-field>
+      <mat-label > Nom d'utilisateur :</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="user.userName"
+        name="username"
+        required
+        placeholder="Nom d'utilisateur"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label > Mot de passe :</mat-label>
+        <input
+        matInput
+        type="password"
+        [(ngModel)]="user.password"
+        name="password"
+        required
+        placeholder="Mot de passe"
+      />
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color='primary' type="submit" [disabled]="!f.valid">
+    Se connecter
+  </button>
+  <br>
+  <br>
+</form>
+
+<button *ngIf='!isPwa() && this.displayInstallBtn' color='accent' (click)='installPwa()' mat-raised-button>Ajouter l'app à l'accueil</button>

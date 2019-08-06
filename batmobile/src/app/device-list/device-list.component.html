@@ -1,0 +1,14 @@
+
+<mat-form-field>
+  <mat-label>Sélectionnez la machine</mat-label>
+  <mat-select >
+    <mat-option
+      *ngFor="let device of devices"
+      [value]="device.name"
+      (click)="pickDevice(device)">
+      {{ device.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+  <app-observation *ngIf=this.selectedDevice [device]="selectedDevice"></app-observation>

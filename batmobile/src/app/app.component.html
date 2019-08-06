@@ -1,0 +1,17 @@
+<div class="content">
+  <mat-toolbar style='margin:0'>
+    <mat-toolbar-row>
+      <span><img src="./assets/Natagora.png"/></span>
+      <span class="spacer"></span>
+      <span><button (click)='logout()' *ngIf='isConnected()' color='accent' mat-raised-button style="float: right;">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div style='text-align: center'>
+    <mat-card>
+      <router-outlet></router-outlet>
+    </mat-card>
+  </div>
+</div>

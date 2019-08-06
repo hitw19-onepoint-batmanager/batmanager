@@ -1,0 +1,11 @@
+
+<app-observation-form
+  *ngIf="observation && !hasCurrentObservation()"
+  [observation]="observation"
+  (observationChanged)="toggleAction($event)"
+></app-observation-form>
+<app-observation-end
+  *ngIf='observation && hasCurrentObservation()'
+  [observation]="observation"
+  (observationChanged)="toggleAction($event)" >
+</app-observation-end>

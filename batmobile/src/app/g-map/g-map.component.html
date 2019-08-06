@@ -1,0 +1,13 @@
+<div style='height: 6vh;text-align:center;'>
+  <button (click)='triggerDevices()' style='margin-left: 5px' color='primary' mat-mini-fab>
+      <mat-icon *ngIf='this.showDevices'>center_focus_strong</mat-icon>
+      <mat-icon *ngIf='this.showDevices === false'>center_focus_weak</mat-icon>
+  </button>
+  <button (click)='triggerPOI()' style='margin-left: 5px' color='primary' mat-mini-fab>
+      <mat-icon *ngIf='this.showPOI'>location_on</mat-icon>
+      <mat-icon *ngIf='this.showPOI === false'>location_off</mat-icon>
+  </button>
+</div>
+<agm-map [zoom]='0' [style.height]='this.heightMap' [style.width]='this.widthMap' style="margin: 0" class='navmap' [restriction]='this.restriction' [mapDraggable]='true' [streetViewControl]='false' [latitude]='obs.coordX' [longitude]='obs.coordY' [keyboardShortcuts]='false' [showDefaultInfoWindow]='true'>
+  <agm-marker *ngFor='let loc of getMarkerLocations()' [latitude]="loc.lat" [longitude]="loc.lng" [title]='loc.label' [iconUrl]='loc.iconUrl' [openInfoWindow]='true'></agm-marker>
+</agm-map>

@@ -1,0 +1,8 @@
+.observation-form-container, mat-form-field {
+  display: block;
+}
+
+.observation-form-container > * {
+  margin-right: 10%;
+  margin-left: 10%;
+} 
