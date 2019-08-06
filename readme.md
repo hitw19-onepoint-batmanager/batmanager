@@ -84,30 +84,31 @@ Ce projet est sous la license MIT
 # Captures d'ecrans
 
 ## Alfred
-![Batmobile Icon](./assets/screenshots/alfredmenu.png)
 
-![Batmobile Icon](./assets/screenshots/alfredaudiofile.png)
+![Alfred](./assets/screenshots/alfredmenu.png)
 
-![Batmobile Icon](./assets/screenshots/alfredaudiofiledetail.png)
+![Alfred](./assets/screenshots/alfredaudiofile.png)
 
-![Batmobile Icon](./assets/screenshots/alfredmap.png)
+![Alfred](./assets/screenshots/alfredaudiofiledetail.png)
 
-![Batmobile Icon](./assets/screenshots/alfredmapdetail.png)
+![Alfred](./assets/screenshots/alfredmap.png)
 
-![Batmobile Icon](./assets/screenshots/alfreddevices.png)
+![Alfred](./assets/screenshots/alfredmapdetail.png)
 
-![Batmobile Icon](./assets/screenshots/alfredusers.png)
+![Alfred](./assets/screenshots/alfreddevices.png)
+
+![Alfred](./assets/screenshots/alfredusers.png)
 
 ## Batmobile
 
-![Batmobile Icon](./assets/screenshots/batmobilehome.png)
+![Batmobile](./assets/screenshots/batmobilehome.png)
 
-![Batmobile Icon](./assets/screenshots/batmobileform.png)
+![Batmobile](./assets/screenshots/batmobileform.png)
 
-![Batmobile Icon](./assets/screenshots/batmobilemap.png)
+![Batmobile](./assets/screenshots/batmobilemap.png)
 
 ## Robin
 
-![Batmobile Icon](./assets/screenshots/robinclient.png)
+![Robin](./assets/screenshots/robinclient.png)
 
-![Batmobile Icon](./assets/screenshots/robinclientlaunch.png)
+![Robin](./assets/screenshots/robinclientlaunch.png)
