@@ -8,13 +8,13 @@
       <mat-icon *ngIf='this.showPOI === false'>location_off</mat-icon>
   </button>
 </div>
-<agm-map [zoom]='0' [style.height]='this.heightMap' [style.width]='this.widthMap' style="margin: 0" class='navmap' [restriction]='this.restriction' [mapDraggable]='true' [keyboardShortcuts]='false' [showDefaultInfoWindow]='true'>
+<agm-map [zoom]='0' [style.height]='this.heightMap' [style.width]='this.widthMap' style="margin: 0" class='navmap' [restriction]='this.restriction' [mapDraggable]='true' [keyboardShortcuts]='false' [streetViewControl]='false' [showDefaultInfoWindow]='true'>
   <agm-marker *ngFor='let loc of getMarkerLocations()' [latitude]="loc.lat" [longitude]="loc.lng" [title]='loc.label' [iconUrl]='loc.iconUrl'>
     <agm-info-window *ngIf='loc.data' [disableAutoPan]="true">
         <h3>Id Appareil</h3>
         <p>{{loc.label}}</p>
         <h3>Start - End Date</h3>
-        <p>{{loc.data.dateEnd}} - {{loc.data.dateEnd}}</p>
+        <p>{{loc.data.dateStart}} - {{loc.data.dateEnd}}</p>
         <h3>Latitude - Longitude</h3>
         <p>{{loc.lat}} - {{loc.lng}}</p>
         <h3>Hauteur</h3>
